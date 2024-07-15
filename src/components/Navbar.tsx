@@ -9,6 +9,7 @@ import heart from "../images/heart.png"
 import { signOut } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PiUsersFourThin } from "react-icons/pi";
 
 interface searchProp{
   setSearch?:any
@@ -37,6 +38,10 @@ const Navbar = (props:searchProp) => {
    auth.currentUser?.phoneNumber ? navigate("/wishlist")
    : toast.warning("Please login")
   }
+
+  const handleFriendsClick = () => {
+    navigate('/friends'); 
+  };
 
   return (
     <>
@@ -67,6 +72,10 @@ const Navbar = (props:searchProp) => {
       <div onClick={wishlist} className='ml-6 text-xs'>
       <img src={heart} className='w-5 h-5 ml-3'/>
       <h1 className='cursor-pointer'>Wishlist</h1>
+      </div>
+      <div className='ml-6 text-xs'>
+      < PiUsersFourThin className='w-6 h-6 ml-3' onClick={handleFriendsClick}/>
+      <h1 className='cursor-pointer'>Friends</h1>
       </div>
     </div>
     </>

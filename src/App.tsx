@@ -7,6 +7,7 @@ import Details from './components/Details'
 import Wishlist from './components/Wishlist'
 import Navbar from './components/Navbar'
 import TryOnPage from './components/TryOnPae'
+import Friends from '../../../../../Friends'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
   <Route path='/details' element={<Details/>}/>
   <Route path='/wishlist' element={<Wishlist/>}/>
   <Route path='/try-on/:title' element={<TryOnPage/>}/>
+  {/* <Route path="/friends" element={<Friends />} /> */}
 </Routes>
 </>
   )
